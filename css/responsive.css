@@ -1,0 +1,160 @@
+/* Responsive cho Tablet ngang / Laptop nhỏ */
+@media (max-width:992px){
+
+    .anime-grid,
+    .movie-grid{
+        grid-template-columns:repeat(2,1fr);
+        
+    }
+
+    .hero h2{
+        font-size:50px;
+    }
+
+
+    .hero,
+    .top-rated,
+    .genres,
+    footer{
+        padding:50px 30px;
+    }
+
+    nav ul{
+        gap:15px;
+    }
+
+}
+
+/* Responsive cho Tablet dọc */
+@media (max-width:768px){
+    .menu-btn{
+        display:block;
+    }
+
+    .nav-menu{
+        display:none;
+    }
+
+    .nav-menu.active{
+        display:flex;
+        flex-direction:column;
+    }
+
+    nav{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero{
+        padding:40px 20px;
+        text-align:center;
+    }
+
+    .hero h2{
+        font-size:30px;
+    }
+
+    .hero h2{
+        font-size:50px;
+    }
+
+    .hero-buttons{
+        display:flex;
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .featured-card{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+    .anime-grid,
+    .movie-grid{
+        grid-template-columns:1fr;
+        max-width:100%;
+    }
+
+    .footer-content{
+        flex-direction:column;
+        gap:30px;
+        text-align:center;
+    }
+
+
+
+}
+
+/* Responsive cho Mobile */
+@media (max-width: 576px) {
+
+    /* Navbar */
+    nav {
+        padding: 15px;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 30px 15px;
+    }
+
+    .hero h2 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero-buttons a {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+    }
+
+    /* Các section */
+    .top-rated,
+    .genres,
+    footer {
+        padding: 30px 15px;
+    }
+
+    /* Tiêu đề */
+    .hero h2 {
+        font-size: 40px;
+    }
+    .top-rated h2,
+    .genres h2,
+    footer h2 {
+        font-size: 28px;
+    }
+
+    .genre h3 {
+        font-size: 22px;
+    }
+
+    /* Card */
+    .movie-card img {
+        height: 250px;
+    }
+
+    .movie-card h4 {
+        font-size: 18px;
+    }
+
+}
