@@ -13,6 +13,5 @@ Features:
 - Movie cards
 
 Future updates:
-- Search
 - Favorites
-- Login/Profile
+- Login
