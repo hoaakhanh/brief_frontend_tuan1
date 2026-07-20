@@ -43,7 +43,7 @@ const welcomeText = document.querySelector(".welcome-text");
 
 loginForm.addEventListener("submit", function (event) {
 
-    event.preventDefault();
+    event.preventDefault(); /* duyet xem co hop le khong */
 
     if (emailInput.value === "") {
         emailError.textContent = "Please enter your email";
@@ -59,22 +59,23 @@ loginForm.addEventListener("submit", function (event) {
 
     }
     else {
-    emailInput.value = "";
-    passwordInput.value = "";
+    emailInput.value = ""; /* tra ve trong khi gap loi */
+    passwordInput.value = ""; /* tra ve trong khi gap loi */
 
-    loginModal.classList.add("hidden");
+    loginModal.classList.add("hidden"); /* dong o dang nhap */
 
-    loginBtn.classList.add("hidden");
-    welcomeText.classList.remove("hidden");
+    loginBtn.classList.add("hidden"); /* tat hien thi nut login */
+
+    welcomeText.classList.remove("hidden"); /* hien chu welcome! */
 }
 
 });
 
-/* Menu */
+/* Menu cho Mobile */ 
 const menuBtn = document.querySelector(".menu-btn");
 const navMenu = document.querySelector(".nav-menu");
 
-menuBtn.addEventListener("click", function () {
+menuBtn.addEventListener("click", function () { /* an dau 3 gach thi hien thi noi dung */
 
     navMenu.classList.toggle("active");
 
