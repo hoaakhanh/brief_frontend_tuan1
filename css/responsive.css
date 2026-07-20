@@ -45,21 +45,16 @@
     }
 
     nav ul{
-        flex-wrap:wrap;
+        flex-wrap:wrap; /* xuong dong khi het cho */
         justify-content:center;
     }
 
     .hero{
         padding:40px 20px;
         text-align:center;
-    }
-
-    .hero{
         height: auto;
         min-height: 90vh;
     }
-
-
 
     .hero h2{
         font-size:30px;
@@ -73,9 +68,7 @@
     }
 
     .featured-card{
-
     flex-direction:column;
-
     text-align:center;
 
 }
