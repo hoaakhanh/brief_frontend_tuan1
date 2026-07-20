@@ -8,22 +8,22 @@ body {
     background-image: 
         linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), /* lam mo nen */
         url("../assets/images/background.jpg");
-        
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+
+    background-size: cover; /* Phu kin toan bo man hinh (anh co the bi cat) */
+    background-position: center; /* neu anh bi cat - lay center */
+    background-attachment: fixed; /* Co dinh anh nen khi scroll */
 
 }
 
 /* Navbar */
-.menu-btn{
-    display:none;
+.menu-btn{ 
+    display:none; /* Khong hien khi o man hinh lap */
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; 
+    justify-content: space-between; /* Tao khoang cach giua cac element trong nav */
+    align-items: center; /* Can giua noi dung theo chieu doc */
     padding: 20px; /* tao khoang cach tren duoi trong khung navbar */
 
     background: rgba(18,18,18,0.85); /* tao mau nen cho navbar */
@@ -34,28 +34,19 @@ nav {
 
     border-radius: 20px; /* bo goc */
 
-    box-shadow:
-        0 8px 32px rgba(0,0,0,0.8);
-
 }
 
 nav ul {
     list-style: none;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-
+    display: flex; /* mac dinh theo chieu ngang */
+    gap: 20px; /* khoang cach giua cac li */
 }
 
-.active {
-    color: yellow;
-}
-
-nav a.logo {
+nav a.logo { /* Logo */
     font-size: 30px;
     font-weight: bold;
     color: yellow;
-    text-decoration: none; 
+    text-decoration: none; /* bo gach chan */
 }
 
 
@@ -63,45 +54,27 @@ nav a:hover {
     color: rgb(255, 123, 0); /* doi mau khi di chuot */
 }
 
-.login-btn.hidden{
-    display:none;
-}
-
-/* Featured Anime */
+/* Featured Anime (hero) */
 h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
+    font-size: 50px;
+    margin: 20px;
     color: yellow;
 }
 
 .hero {
-    height: 9S0vh; /* 100% chieu cao cua man hinh */
+    height: 90vh; /* 90% chieu cao cua man hinh */
 
     display: block; /* tu xuong dong */
+
     display: flex; 
     flex-direction: column; /* trinh bay theo chieu doc */
+
     gap: 10px;
+
     align-items: center;
     justify-content: center;
 
     text-align: center;
-}
-
-.featured-content h3{
-
-    font-size:42px;
-
-    margin-bottom:15px;
-
-
-}
-
-.featured-content p{
-
-    line-height:1.8;
-
-    margin-bottom:30px;
-
 }
 
 .hero-buttons {
@@ -127,40 +100,34 @@ h2 {
 
     font-size: 18px;
 
-    display: inline-block;
+    display: inline-block; /* cung hang nhung co the chinh khoang cach giua ca box */
 
-    margin: 20px;
-}
-
-.featured-card:hover{
-
-    transform:translateY(-8px);
-
-    transition:.3s;
-
-}
-.featured-anime .featured-card {
-    
-    justify-content: center;
+    margin: 15px;
 }
 
 .featured-card{
 
     display:flex;
 
-    align-items:center;
+    align-items:center; /* chinh giua theo chieu ngang (img va div) */
 
     gap:40px;
 
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,0.08);
 
     padding:40px;
 
     border-radius:20px;
 
-    margin-top:30px;
+    margin-top:20px;
 
-    box-shadow:0 8px 20px rgba(0,0,0,.4);
+}
+
+.featured-card:hover{ /* hieu ung khi dua chuot vao card */
+
+    transform:translateY(-8px); /* di chuyen len tren */
+
+    transition:.3s;
 
 }
 
@@ -170,28 +137,34 @@ h2 {
 
     height:450px;
 
-    object-fit:cover;
+    object-fit:cover; /* giu dung ti le anh cho vua khung */
 
     border-radius:15px;
 
 }
 
-.featured-content{
+.featured-content{ /* chiem toan bo khong gian trong con lai */
 
     flex:1;
 
 }
 
-.featured-anime img {
-    width: 280px;
-    
+.featured-content h3{
+
+    font-size:42px;
+
+    margin-bottom:15px;
+
+
 }
 
-.featured-anime img {
-    width: 100%;
-    height: 420px;
-    object-fit: cover;
-    object-position: center;
+.featured-content p.rating{
+    font-size: 25px;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+
 }
 
 .welcome-text.hidden{
