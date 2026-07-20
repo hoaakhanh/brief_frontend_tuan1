@@ -1,13 +1,14 @@
 /* Body */
 body {
     font-family: "Poppins", sans-serif;
-    line-height: 1.6;
-    background-color: #121212;
-    color: #ffffff;
+    line-height: 1.6; /* Khoang cach giua cac dong chu */
+    background-color: #121212; /* Mau nen du phong kh loi img */ 
+    color: #ffffff; /* Mau chu mac dinh */
 
     background-image: 
         linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), /* lam mo nen */
         url("../assets/images/background.jpg");
+        
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
