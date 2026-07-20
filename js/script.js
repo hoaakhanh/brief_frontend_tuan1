@@ -1,12 +1,4 @@
-/* Hieu ung 1 top favorite button 
-const favoriteButton = document.querySelector(".favorite-btn");
-
-favoriteButton.addEventListener("click", function () {
-    favoriteButton.textContent = "💖";
-});
-   */
-
-/* Hieu ung cho All top favorite button toggle */
+/* Hieu ung cho All top favorite button */
 const favoriteButtons = document.querySelectorAll(".favorite-btn"); /* chon tat ca cac button co class favorite-btn */
 favoriteButtons.forEach(function (button) {
     button.addEventListener("click", function () {
@@ -28,18 +20,15 @@ movieButton.addEventListener("click", function () {
 
 /* Login form validation */
 const loginBtn = document.querySelector(".login-btn");
-
 const closeBtn = document.querySelector(".close-btn");
 const loginModal = document.querySelector(".login-modal");
 
 loginBtn.addEventListener("click", function () {
-    loginModal.classList.remove("hidden");
+    loginModal.classList.remove("hidden"); /* hien o dang nhap */
 });
+
 closeBtn.addEventListener("click", function () {
-    console.log(closeBtn);
-    console.log("Close clicked");
-    loginModal.classList.add("hidden");
-    console.log(loginModal.className);
+    loginModal.classList.add("hidden"); /* dong o dang nhap */
 });
 
 const loginForm = document.querySelector(".login-form");

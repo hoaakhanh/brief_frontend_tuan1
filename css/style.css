@@ -1,3 +1,10 @@
+/* Reset CSS */
+* {
+    margin: 0; /* xoa margin mac dinh */
+    padding: 0; /* xoa padding mac dinh */
+    box-sizing: border-box; /* CSS tu can kich thuoc */
+}
+
 /* Body */
 body {
     font-family: "Poppins", sans-serif;
