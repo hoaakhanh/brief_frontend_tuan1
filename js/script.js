@@ -65,6 +65,7 @@ loginForm.addEventListener("submit", function (event) {
     loginModal.classList.add("hidden"); /* dong o dang nhap */
 
     loginBtn.classList.add("hidden"); /* tat hien thi nut login */
+    loginBtn.style.display = "none";
 
     welcomeText.classList.remove("hidden"); /* hien chu welcome! */
 }

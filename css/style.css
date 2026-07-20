@@ -473,6 +473,10 @@ footer h2 {
 }
 
 /* Login Form */
+.hidden {
+    display: none;
+}
+
 .login-box h2 {
     font-size: 27px;
     text-align:center;
