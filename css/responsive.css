@@ -94,6 +94,11 @@
 
 /* Responsive cho Mobile */
 @media (max-width: 576px) {
+    
+    body {
+        background-size: auto 100vh;
+        background-position: center top;
+    }
 
     /* Navbar */
     nav {
