@@ -96,7 +96,7 @@
 @media (max-width: 576px) {
     
     body {
-        background-size: auto 100vh;
+        background-size: auto 10vh;
         background-position: center top;
     }
 
