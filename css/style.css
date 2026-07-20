@@ -34,6 +34,8 @@ body {
 }
 
 nav {
+    position: relative; 
+
     display: flex; 
     justify-content: space-between; /* Tao khoang cach giua cac element trong nav */
     align-items: center; /* Can giua noi dung theo chieu doc */
@@ -47,6 +49,32 @@ nav {
 
     border-radius: 20px; /* bo goc */
 
+}
+
+.nav-menu {
+    display: none;
+
+    position: absolute; /* lay nav lam moc */
+    top: 95%;
+    right: 0;
+
+    width: 220px;
+
+    flex-direction: column;
+
+    background: rgba(18,18,18,0.9);;
+
+    border-radius: 10px;
+
+    position: fixed;
+
+    padding: 10px;
+
+
+}
+
+.nav-menu.active {
+    display: flex;
 }
 
 nav ul {
@@ -86,6 +114,7 @@ h2 {
     flex-direction: column; /* trinh bay theo chieu doc */
 
     gap: 10px;
+    margin-bottom: 40px;
 
     align-items: center;
     justify-content: center;
@@ -135,9 +164,7 @@ h2 {
 
     border-radius:20px;
 
-    margin-top:50px;
-
-    margin-bottom: 80px;
+    margin: 50px;
 
 }
 
@@ -196,7 +223,9 @@ h2 {
 
 /* Top Rated Anime */
 .top-rated {
-    padding-top: 80px;
+    padding: 60px 40px;
+    margin: 40px;
+
 }
 
 .top-rated h2 {
@@ -212,6 +241,8 @@ h2 {
     grid-template-columns: repeat(3, 1fr);
 
     gap: 30px;
+
+    padding: 0px 22px;
 }
 
 .anime-grid h3 {
@@ -525,4 +556,15 @@ footer h2 {
     color:red;
     font-size:14px;
     margin-bottom:10px;
+}
+
+.login-box button {
+    background-color: yellow;
+    border-radius: 15px;
+    width: 60px;
+}
+
+.login-box .close-btn {
+    width: 85px;
+    font-size: 17px;
 }
