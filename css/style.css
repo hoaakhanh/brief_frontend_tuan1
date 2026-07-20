@@ -218,6 +218,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    
     gap: 30px;
     font-size: 18px;
 
@@ -321,12 +322,13 @@ h2 {
 }
 
 .genre{
-    margin-bottom:60px;
+    margin-bottom:40px;
     color: rgb(255, 240, 31);
+    padding: 0px 20px; 
 }
 
 .genre h3 {
-    font-size: 25px;
+    font-size: 27px;
     margin-bottom: 10px;
     
     
@@ -337,8 +339,7 @@ h2 {
     display:grid;
 
 
-    grid-template-columns:
-        repeat(3,1fr);
+    grid-template-columns: repeat(3,1fr);
 
     gap:30px;
 }
@@ -365,9 +366,6 @@ h2 {
     overflow: hidden;
 
     transition: transform 0.3s ease,
-                box-shadow 0.3s ease;
-
-    cursor: pointer;
 }
 
 .movie-card img {
@@ -381,22 +379,9 @@ h2 {
     display: block;
 }
 
-.movie-card h4 {
-
-    font-size: 20px;
-
-    padding: 15px;
-
-    color: white;
-
-    text-align: center;
-}
-
 .movie-card:hover {
 
     transform: translateY(-10px);
-
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 
 }
 
@@ -415,8 +400,8 @@ h2 {
 
 footer {
     background: rgba(0,0,0,0.8); /* tao nen mo cho footer */
-    padding: 60px 40px;
-    margin-top: 80px; /* khoang cach giua footer va genres */
+    padding: 30px 40px;
+    margin-top: 60px; /* khoang cach giua footer va genres */
 }
 
 footer h2 {
@@ -438,29 +423,25 @@ footer h2 {
 }
 
 .footer-section {
-    flex: 1; /* chiem 1/3 chieu rong cua footer */
+    flex: 1; /* chiem 1/3 chieu rong cua footer - vi co 3 .footer-section */
+
 }
 
 .footer-section h3 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     color: yellow;
 }
 
 .footer-links,
 .footer-social {
     list-style: none; /* xoa dau cham */
-    padding: 0;
-}
-
-.footer-links li,
-.footer-social li {
-    margin-bottom: 10px; /* khoang cach moi dong */
 }
 
 .footer-links a,
 .footer-social a {
     color: white;
     text-decoration: none; /* xoa gach chan */
+    margin-bottom: 10px; /* khoang cach moi dong */
     transition: 0.3s;
 }
 
@@ -477,13 +458,19 @@ footer h2 {
 }
 
 /* Login Form */
+.login-box h2 {
+    font-size: 27px;
+    text-align:center;
+    margin-bottom:20px;
+}
+
 .login-modal.hidden{
     display:none;
 }
 
 .login-modal{
-    position:fixed;
-    inset:0;
+    position:fixed; /* co dinh box */
+    inset:0; /* modal phu kin toan bo man hinh */
 
     background:rgba(0,0,0,.7);
 
@@ -492,27 +479,23 @@ footer h2 {
     align-items:center;
 }
 
-.login-box{
+.login-box{ /* hop dang nhap */
     background:#1f1f1f;
     padding:30px;
     border-radius:12px;
-    width:350px;
+    width:350px; /* chieu rong hop */
 }
 
-.login-box h2{
-    text-align:center;
-    margin-bottom:20px;
-}
-
-.login-box input{
+.login-box input{ /* khung input */
     width:100%;
     padding:10px;
-    margin-bottom:15px;
+    margin-bottom:15px; /* khoang cach cac input */
 }
 
-.close-btn{
-    margin-top:10px;
-    width:100%;
+.close-btn {
+    display: block;
+    width: 120px;
+    margin: 10px auto 0;
 }
 
 .email-error,
