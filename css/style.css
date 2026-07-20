@@ -6,6 +6,12 @@
 }
 
 /* Body */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
 body {
     font-family: "Poppins", sans-serif;
     line-height: 1.6; /* Khoang cach giua cac dong chu */
@@ -126,7 +132,9 @@ h2 {
 
     border-radius:20px;
 
-    margin-top:20px;
+    margin-top:50px;
+
+    margin-bottom: 80px;
 
 }
 
@@ -185,7 +193,7 @@ h2 {
 
 /* Top Rated Anime */
 .top-rated {
-    padding: 50px;
+    padding-top: 80px;
 }
 
 .top-rated h2 {
