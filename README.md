@@ -12,6 +12,3 @@ Features:
 - Genre sections
 - Movie cards
 
-Future updates:
-- Favorites
-- Login
