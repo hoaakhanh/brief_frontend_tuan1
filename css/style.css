@@ -13,7 +13,7 @@ main {
 }
 
 html {
-    scroll-behavior: smooth; /* cuon muot */
+    scroll-behavior: smooth; /* cuon muot
 }
 
 body {
@@ -38,11 +38,11 @@ body {
 }
 
 nav {
-    position: relative; 
 
     display: flex; 
     justify-content: space-between; /* Tao khoang cach giua cac element trong nav */
     align-items: center; /* Can giua noi dung theo chieu doc */
+
     padding: 20px; /* tao khoang cach tren duoi trong khung navbar */
 
     background: rgba(18,18,18,0.85); /* tao mau nen cho navbar */
@@ -52,28 +52,6 @@ nav {
     backdrop-filter: blur(10px); /* lam mo nen sau navbar (10px la do mo nen) */
 
     border-radius: 20px; /* bo goc */
-
-}
-
-.nav-menu {
-    display: none;
-
-    position: absolute; /* lay nav lam moc */
-    top: 95%;
-    right: 0;
-
-    width: 220px;
-
-    flex-direction: column;
-
-    background: rgba(18,18,18,0.9);;
-
-    border-radius: 10px;
-
-    position: fixed;
-
-    padding: 10px;
-
 
 }
 
@@ -100,6 +78,16 @@ nav a:hover {
 }
 .nav-menu a {
     color: yellow;
+    text-decoration: none;
+}
+
+.welcome-text.hidden{
+    display:none;
+}
+
+.welcome-text {
+    color:#ffd54f;
+    font-weight:bold;
 }
 
 /* Featured Anime (hero) */
@@ -216,20 +204,11 @@ h2 {
 
 }
 
-.welcome-text.hidden{
-    display:none;
-}
-
-.welcome-text {
-    color:#ffd54f;
-    font-weight:bold;
-}
 
 /* Top Rated Anime */
 .top-rated {
     padding: 60px 40px;
-    margin: 40px;
-
+    
 }
 
 .top-rated h2 {
