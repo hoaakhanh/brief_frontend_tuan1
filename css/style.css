@@ -66,13 +66,32 @@ nav ul {
     gap: 20px; /* khoang cach giua cac li */
 }
 
+@keyframes logoMove {
+    0% {
+        transform: scale(1.01); 
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1.01);
+    }
+}
+
+
 nav a.logo { /* Logo */
     font-size: 30px;
     font-weight: bold;
     color: yellow;
     text-decoration: none; /* bo gach chan */
-}
+    text-shadow: 1px 2px 4px rgb(255, 208, 0);
 
+    animation-name: logoMove;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+}
 
 nav a:hover {
     color: rgb(255, 123, 0); /* doi mau khi di chuot */
@@ -102,6 +121,18 @@ h2 {
     color: yellow;
 }
 
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .hero {
     height: 90vh; /* 90% chieu cao cua man hinh */
 
@@ -117,6 +148,8 @@ h2 {
     justify-content: center;
 
     text-align: center;
+
+    animation: fadeUp 1s ease;
 }
 
 .hero-buttons {
