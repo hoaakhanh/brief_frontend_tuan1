@@ -83,3 +83,10 @@ menuBtn.addEventListener("click", function () { /* an dau 3 gach thi hien thi no
     navMenu.classList.toggle("active");
 
 });
+
+/* API */
+fetch("https://jsonplaceholder.typicode.com/posts")
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+});

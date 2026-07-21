@@ -93,6 +93,12 @@ nav a.logo { /* Logo */
 
 }
 
+nav a.logo:hover {
+    animation-name: logoMove;
+    animation-play-state: paused;
+    color: yellow;
+}
+
 nav a:hover {
     color: rgb(255, 123, 0); /* doi mau khi di chuot */
 }
