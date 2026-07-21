@@ -12,6 +12,10 @@ main {
     gap: 80px;
 }
 
+html {
+    scroll-behavior: smooth; /* cuon muot */
+}
+
 body {
     font-family: "Poppins", sans-serif;
     line-height: 1.6; /* Khoang cach giua cac dong chu */
