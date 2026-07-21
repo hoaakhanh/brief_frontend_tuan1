@@ -40,6 +40,7 @@ const emailError = document.querySelector(".email-error");
 const passwordError = document.querySelector(".password-error");
 
 const welcomeText = document.querySelector(".welcome-text");
+const logoutBtn = document.querySelector(".logout-btn");
 
 loginForm.addEventListener("submit", function (event) {
 
@@ -65,6 +66,8 @@ loginForm.addEventListener("submit", function (event) {
     loginModal.classList.add("hidden"); /* dong o dang nhap */
 
     loginBtn.classList.add("hidden"); /* tat hien thi nut login */
+
+    logoutBtn.classList.remove("hidden");
 
     welcomeText.classList.remove("hidden"); /* hien chu welcome! */
 }

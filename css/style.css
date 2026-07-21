@@ -9,7 +9,7 @@
 main {
     display: flex;
     flex-direction: column;
-    gap: 80px;
+
 }
 
 html {
@@ -29,6 +29,7 @@ body {
     background-size: cover; /* Phu kin toan bo man hinh (anh co the bi cat) */
     background-position: center; /* neu anh bi cat - lay center */
     background-attachment: fixed; /* Co dinh anh nen khi scroll */
+
 
 }
 
@@ -81,12 +82,16 @@ nav a:hover {
     text-decoration: none;
 }
 
+.nav-menu .hidden {
+    display: none;
+}
+
 .welcome-text.hidden{
     display:none;
 }
 
 .welcome-text {
-    color:#ffd54f;
+    color: rgb(255, 123, 0);
     font-weight:bold;
 }
 
@@ -354,7 +359,7 @@ h2 {
 }
 
 .genre{
-    margin-bottom:40px;
+    margin-bottom:60px;
     color: rgb(255, 240, 31);
     padding: 0px 20px; 
 }
