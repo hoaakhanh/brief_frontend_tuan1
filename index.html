@@ -7,9 +7,8 @@
 
         <link rel="icon" type="image/png" href="assets/logoicon.png">
 
-        <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/responsive.css">
     </head>
 
     <body> 
@@ -27,7 +26,7 @@
                     <li><a href="#feature">Home</a></li>
                     <li><a href="#top-rated">Top Rated</a></li>
                     <li><a href="#genres">Genres</a></li>
-                    <li><a href="#fav">Favorites</a></li>
+                    <li><a href="#fav" id="favorites-link">Favorites</a></li>
                     <li><input type="search" class="search-input" placeholder="Search anime..."></li>
                     <li><a class="login-btn" href="#">Login</a></li>
                     <li><a class="logout-btn hidden" href="#">Logout</a></li>
@@ -77,40 +76,8 @@
             <section id="top-rated" class="top-rated">
                 <h2>Top Rated</h2>
 
-                <div class="anime-grid">
-                        <article class="anime-card">
-                            <img src="assets/images/toprated1.jpg" alt="Anime">
-                            <h3>Dr.Stone</h3>
-                            <p class="rating">⭐ 9.7</p>
-                            <p>Sci-fi • 2019</p>
-                            <div class="top-button">
-                                <a href="#">Details</a>
-                                <button class="favorite-btn">❤</button>
-                            </div>
-                        </article>
-                        
-                        <article class="anime-card">
-                            <img src="assets/images/toprated2.jpg" alt="Anime">
-                            <h3>Undead Unluck</h3>
-                            <p class="rating">⭐ 9.5</p>
-                            <p>Action • 2023</p>
-                            <div class="top-button">
-                                <a href="#">Details</a>
-                                <button class="favorite-btn">❤</button>
-                            </div>
-                        </article>
+                <div class="movie-grid" id="anime-list"></div>
 
-                        <article class="anime-card">
-                            <img src="assets/images/toprated3.jpg" alt="Anime">
-                            <h3>Promised Neverland</h3>
-                            <p class="rating">⭐ 9.3</p>
-                            <p>Thriller • 2019</p>
-                            <div class="top-button">
-                                <a href="#">Details</a>
-                                <button class="favorite-btn">❤</button>
-                            </div>
-                        </article>
-                </div>
             </section>
             
             <section id="genres" class="genres">
