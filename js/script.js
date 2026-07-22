@@ -138,13 +138,6 @@ fetch("https://api.jikan.moe/v4/top/anime")
                 }
             });
 
-            // Danh sach favorite anime 
-            const favoriteLink = document.querySelector("#favorite-link");
-            favoritesLink.addEventListener("click", function (event) {
-                event.preventDefault();
-
-                // Code xử lý Favorites
-            });
 
             //Detail Button
             const detailButton = document.createElement("button");
