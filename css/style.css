@@ -107,6 +107,19 @@ nav a:hover {
     text-decoration: none;
 }
 
+.nav-menu button {
+    background-color: rgba(0,0,0,.7);
+    color: yellow;
+    border-radius: 8px;
+    font-size: 17px;
+    padding: 2px;
+
+}
+
+.nav-menu .search-input {
+    background-color: #cccccc;
+}
+
 .nav-menu .hidden {
     display: none;
 }

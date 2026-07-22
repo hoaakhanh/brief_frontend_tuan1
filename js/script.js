@@ -84,6 +84,77 @@ menuBtn.addEventListener("click", function () { /* an dau 3 gach thi hien thi no
 
 });
 
+// Function
+
+function createAnimeCard(anime) {
+    //Card
+    const card = document.createElement("article"); /* them article */
+    card.classList.add("movie-card"); /* them class cho article de moi article la mot card phim */
+
+    // Image
+    const image = document.createElement("img");
+    image.src = anime.images.jpg.image_url;
+    image.alt = anime.title_english || anime.title;
+
+    //Title
+    const title = document.createElement("h3");
+    title.textContent = anime.title_english || anime.title;
+
+    //Rating
+    const rating = document.createElement("p");
+    rating.textContent = `⭐ ${anime.score}`;
+
+    // Genre
+    const genre = document.createElement("p");
+    const genres = anime.genres.map(genre => genre.name); /* voi moi genre lay thuoc tinh name */
+    genre.textContent = genres.join(" • ");
+
+    // Favorite Button
+    const favoriteButton = document.createElement("button");
+    favoriteButton.classList.add("favorite-btn");
+    favoriteButton.textContent = "❤️";
+
+    // Kiểm tra anime đã được yêu thích chưa
+    const isFavorite = localStorage.getItem(`favorite_${anime.mal_id}`);
+
+    // Nếu đã yêu thích → hiển thị 💖
+    if (isFavorite) {
+        favoriteButton.textContent = "💖";
+    }
+
+    favoriteButton.addEventListener("click", function () {
+        if (favoriteButton.textContent === "❤️") {
+            favoriteButton.textContent = "💖";
+            localStorage.setItem(
+            `favorite_${anime.mal_id}`,"true");
+        }
+        else {
+            favoriteButton.textContent = "❤️";
+            localStorage.removeItem(`favorite_${anime.mal_id}`)
+        }
+    });
+
+
+    //Detail Button
+    const detailButton = document.createElement("button");
+    detailButton.classList.add("detail-btn");
+    detailButton.textContent = "More Details";
+
+    // Dua tat ca vao card 
+    card.appendChild(image);
+    card.appendChild(title);
+    card.appendChild(rating);
+    card.appendChild(genre);
+    card.appendChild(favoriteButton);
+    card.appendChild(detailButton);
+
+    return card;
+    
+};
+
+
+
+
 /* API */
 fetch("https://api.jikan.moe/v4/top/anime")
     .then(response => response.json())
@@ -91,80 +162,28 @@ fetch("https://api.jikan.moe/v4/top/anime")
         result.data.forEach(anime => { /* lay tu kho ttin */
         
             const animeLIst = document.querySelector("#anime-list");
-            //Card
-            const card = document.createElement("article"); /* them article */
-            card.classList.add("movie-card"); /* them class cho article de moi article la mot card phim */
-
-            // Image
-            const image = document.createElement("img");
-            image.src = anime.images.jpg.image_url;
-            image.alt = anime.title_english || anime.title;
-
-            //Title
-            const title = document.createElement("h3");
-            title.textContent = anime.title_english || anime.title;
-
-            //Rating
-            const rating = document.createElement("p");
-            rating.textContent = `⭐ ${anime.score}`;
-
-            // Genre
-            const genre = document.createElement("p");
-            const genres = anime.genres.map(genre => genre.name); /* voi moi genre lay thuoc tinh name */
-            genre.textContent = genres.join(" • ");
-
-            // Favorite Button
-            const favoriteButton = document.createElement("button");
-            favoriteButton.classList.add("favorite-btn");
-            favoriteButton.textContent = "❤️";
-
-            // Kiểm tra anime đã được yêu thích chưa
-            const isFavorite = localStorage.getItem(`favorite_${anime.mal_id}`);
-
-            // Nếu đã yêu thích → hiển thị 💖
-            if (isFavorite) {
-                favoriteButton.textContent = "💖";
-            }
-
-            favoriteButton.addEventListener("click", function () {
-                if (favoriteButton.textContent === "❤️") {
-                    favoriteButton.textContent = "💖";
-                    localStorage.setItem(
-                    `favorite_${anime.mal_id}`,"true");
-                }
-                else {
-                    favoriteButton.textContent = "❤️";
-                    localStorage.removeItem(`favorite_${anime.mal_id}`)
-                }
-            });
-
-
-            //Detail Button
-            const detailButton = document.createElement("button");
-            detailButton.classList.add("detail-btn");
-            detailButton.textContent = "More Details";
-
-            // Dua tat ca vao card 
-            card.appendChild(image);
-            card.appendChild(title);
-            card.appendChild(rating);
-            card.appendChild(genre);
-            card.appendChild(favoriteButton);
-            card.appendChild(detailButton);
+            const card = createAnimeCard(anime);
 
             // Dua cac card vao list
             animeLIst.appendChild(card); /* dua card vao movie-grid */
-
-
-        });
+            
 });
 
+// Search Input
+const searchInput = document.querySelector(".search-input");
+const searchBtn = document.querySelector("#search-btn");
 
-fetch("https://api.jikan.moe/v4/top/anime")
-    .then(response => response.json())
-    .then(result => {
-        result.data.forEach(anime => { /* lay tu kho ttin */
-            console.log(anime);
-        }); 
+searchBtn.addEventListener("click", function() {
+    const keyword = searchInput.value.trim();
+    if (!keyword) {
+        return;
+    }
+
+    fetch(`https://api.jikan.moe/v4/anime?q=${keyword}`)
+        .then(response => response.json())
+        .then(result => {
+            console.log(result);
+        })
+});
+
     });
-
