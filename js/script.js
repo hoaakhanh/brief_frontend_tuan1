@@ -120,22 +120,32 @@ function createAnimeCard(anime) {
     favoriteButton.textContent = "❤️";
 
     // Kiểm tra anime đã được yêu thích chưa
-    const isFavorite = localStorage.getItem(`favorite_${anime.mal_id}`);
+    const favoriteIds = JSON.parse(localStorage.getItem("favorites")) || [];
 
     // Nếu đã yêu thích → hiển thị 💖
-    if (isFavorite) {
+    if (favoriteIds.includes(anime.mal_id)) {
         favoriteButton.textContent = "💖";
     }
 
     favoriteButton.addEventListener("click", function () {
+        const favoriteIds = JSON.parse(localStorage.getItem("favorites")) || [];
+
         if (favoriteButton.textContent === "❤️") {
             favoriteButton.textContent = "💖";
+
+            favoriteIds.push(anime.mal_id);
             localStorage.setItem(
-            `favorite_${anime.mal_id}`,"true");
-        }
-        else {
+                "favorites", JSON.stringify(favoriteIds)
+            );
+        } else {
             favoriteButton.textContent = "❤️";
-            localStorage.removeItem(`favorite_${anime.mal_id}`)
+            const index = favoriteIds.indexOf(anime.mal_id);
+
+            favoriteIds.splice(index, 1);
+
+            localStorage.setItem(
+                "favorites", JSON.stringify(favoriteIds)
+            );
         }
     });
 
@@ -144,7 +154,7 @@ function createAnimeCard(anime) {
     card.appendChild(title);
     card.appendChild(rating);
     card.appendChild(genre);
-    card.appendChild(detailButton);
+    card.appendChild(detailButton); 
     card.appendChild(favoriteButton);
     
     return card;
@@ -208,5 +218,49 @@ searchBtn.addEventListener("click", function() {
 closeSearchBtn.addEventListener("click", function() {
 
     searchDiv.classList.remove("active");
+
+});
+
+// Favorite - Navbar
+const favoriteLink = document.querySelector("#favorites-link");
+const favoriteDiv = document.querySelector(".fav-result-div");
+
+const animeFav = document.querySelector("#favorite-list")
+
+favoriteLink.addEventListener("click", function() {
+    // Hiện khu vực Favorites
+    favoriteDiv.classList.add("active");
+
+    // Xoa su kien cu
+    animeFav.innerHTML = "";
+
+    // Lấy danh sách ID Favorites
+    const favoriteIds = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    // Nếu chưa có Favorites
+    if (favoriteIds.length === 0) {
+
+        animeFav.textContent =
+            "You haven't added any anime to your favorites yet.";
+
+        return;
+    }
+
+    // Duyệt từng ID
+    favoriteIds.forEach(id => {
+        fetch(`https://api.jikan.moe/v4/anime/${id}`)
+        .then(response => response.json())
+        .then(result => {
+            const anime = result.data;    
+            const card = createAnimeCard(anime);
+            animeFav.appendChild(card);
+        });
+    });
+});
+
+const closeFavBtn = document.querySelector("#close-favorite");
+closeFavBtn.addEventListener("click", function() {
+
+    favoriteDiv.classList.remove("active");
 
 });

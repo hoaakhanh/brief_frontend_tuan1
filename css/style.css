@@ -633,3 +633,52 @@ footer h2 {
     color: red;
     transform: scale(1.2);
 }
+
+/* Fav Navbar */
+.fav-result-div {
+    display: none;
+    position: relative;
+}
+
+.fav-result-div.active {
+    background-color: rgba(0, 0, 0, 0.9);
+    display: block;
+    top: 100%;
+    width: 100%;
+}
+
+.fav-result-div h2 {
+    margin-bottom: 30px;
+
+    color: yellow;
+
+    font-size: 30px;
+}
+
+
+#close-favorite {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+
+    background: none;
+    border: none;
+
+    color: yellow;
+    font-size: 32px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+#close-favorite:hover {
+    color: red;
+    transform: scale(1.2);
+}
+
+#favorite-list .movie-card h3 {
+    margin-top: 10px;
+
+    color: white;
+}
