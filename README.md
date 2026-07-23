@@ -152,5 +152,3 @@ This project was created to practice and improve frontend development skills, in
 **Current Status:** In Development 🚧
 
 The core anime browsing, search, favorites, LocalStorage, and anime detail features have been implemented. Login/Profile functionality is planned as the next feature.
-
-This project was created as a frontend learning project to practice HTML, CSS, and JavaScript.
